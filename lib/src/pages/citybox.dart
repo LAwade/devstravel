@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 class CityBox extends StatelessWidget {
   final data;
   final onTap;
+  final int index;
 
-  CityBox({required this.data, required this.onTap});
+  CityBox({required this.data, required this.onTap, this.index = 0});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +13,7 @@ class CityBox extends StatelessWidget {
         margin: const EdgeInsets.only(left: 10, right: 10, bottom: 15),
         child: GestureDetector(
           onTap: () {
-            onTap(context, data);
+            onTap(context, data, index);
           },
           child: Stack(
             children: [

@@ -9,8 +9,8 @@ import 'package:provider/provider.dart';
 class Cities extends StatelessWidget {
   const Cities({super.key});
 
-  cityBoxAction(context, index) {
-    print(index['name']);
+  cityBoxAction(context, data, index) {
+    Navigator.pushNamed(context, '/city', arguments: data);
   }
 
   @override
@@ -21,9 +21,9 @@ class Cities extends StatelessWidget {
     return Consumer<AppData>(builder: (context, AppData appdata, child) {
       var cities = [];
 
-      for (var el in appdata.data[int.parse(continentIndex.toString())]
+      for (var item in appdata.data[int.parse(continentIndex.toString())]
           ['countries']) {
-        cities.addAll(el['cities']);
+        cities.addAll(item['cities']);
       }
 
       return CustomScaffold(

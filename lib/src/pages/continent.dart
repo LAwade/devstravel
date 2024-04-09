@@ -12,12 +12,10 @@ class ContinentePage extends StatelessWidget {
 
   void seeCityAction(context, continentIndex) {
     Navigator.pushNamed(context, '/cities', arguments: continentIndex);
-    print(continentIndex);
   }
 
-  cityBoxAction(context, index) {
-    print(index['name']);
-    Navigator.pushNamed(context, '/cities');
+  void cityBoxAction(context, data, indexView) {
+    Navigator.pushNamed(context, '/city', arguments: data);
   }
 
   @override
@@ -40,7 +38,6 @@ class ContinentePage extends StatelessWidget {
             for (var item in appdata.data[index]['countries']) {
               cities.addAll(item['cities']);
             }
-
             return Column(
               children: [
                 Row(
@@ -68,8 +65,11 @@ class ContinentePage extends StatelessWidget {
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
                     itemCount: cities.length,
-                    itemBuilder: (context, index) {
-                      return CityBox(data: cities[index], onTap: cityBoxAction);
+                    itemBuilder: (contextView, indexView) {
+                      return CityBox(
+                          data: cities[indexView],
+                          onTap: cityBoxAction,
+                          index: indexView);
                     },
                   ),
                 )
