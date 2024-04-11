@@ -1,4 +1,3 @@
-import 'package:devstravel/src/common/fonts.dart';
 import 'package:devstravel/src/models/appdata.dart';
 import 'package:devstravel/src/pages/citybox.dart';
 import 'package:devstravel/src/partials/customappbar.dart';
