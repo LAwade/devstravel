@@ -2,6 +2,7 @@ import 'package:devstravel/src/models/appdata.dart';
 import 'package:devstravel/src/pages/cities.dart';
 import 'package:devstravel/src/pages/city.dart';
 import 'package:devstravel/src/pages/continent.dart';
+import 'package:devstravel/src/pages/favorites.dart';
 import 'package:devstravel/src/pages/home.dart';
 import 'package:devstravel/src/pages/preload.dart';
 import 'package:devstravel/src/pages/search.dart';
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/preload',
       routes: {
         '/home': (context) => HomePage(),
+        '/favorites': (context) => FavoritesPage(),
         '/preload': (context) => PreloadPage(),
         '/search': (context) => SearchPage(),
         '/continente': (context) => ContinentePage(),
